@@ -11,42 +11,45 @@ public class Lists {
         }
         return -1;
     }
+
     public static int indexOfByIndex(String color, List<String> colors, int index) {
-        for (int i = index; i <colors.size() ; i++){
+        for (int i = index; i < colors.size(); i++) {
             if (colors.get(i).equals(color)) {
                 return i;
             }
         }
         return -1;
     }
-    public static int IndexOfEmpty(List<String> colors){
+
+    public static int indexOfEmpty(List<String> colors) {
         for (int i = 0; i < colors.size(); i++) {
-            if ("".equals(colors.get(i))) {
+            if (colors.get(i).equals("")) {
                 return i;
             }
-
         }
         return -1;
     }
+
     public static int put(String color, List<String> colors) {
-        for (int i= 0; i< colors.size(); i++){
-            if ("".equals(colors.get(i))) {
+        for (int i = 0; i < colors.size(); i++) {
+            if (colors.get(i).equals("")) {
                 colors.set(i, color);
                 return i;
             }
-
         }
+        // If no empty slot is found, return -1
         return -1;
     }
+
     public static int remove(String color, List<String> colors) {
-        int removed_counter = 0;
+        int removedCounter = 0;
 
         for (int i = 0; i < colors.size(); i++) {
             if (colors.get(i).equals(color)) {
-                removed_counter++;
+                removedCounter++;
                 colors.set(i, "");
             }
         }
-        return removed_counter;
+        return removedCounter;
     }
 }
